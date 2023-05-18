@@ -47,8 +47,9 @@ Link: [DevTools Explained](https://youtu.be/SkoI_VHtcTU?t=281)
 ```
 
 ## Routing Step-by-step
-The Git branch `routing` depicts an early state of the application which concentrates
-on the integration of the routing. CLI: `git checkout routing`.
+ - The Git branch `routing` depicts an early state of the application which concentrates on the integration of the routing. CLI: `git checkout routing`.
+ - Routing video explanation: [Angular NgRx Course - 03 Application Setup](https://youtu.be/QlzX_gKixa4?list=PLaMbwDs23r4KXoMucJEyUAvamQ-kFNBvC&t=223)
+
 1. Create a module AppRouting via `ng g m appRouting --flat` (creates the file: `app-routing.module.ts`)
 2. Import and add AppRouting to `app.module.ts` `import {AppRoutingModule} from "./app-routing.module";`
     ```typescript
@@ -114,3 +115,12 @@ on the integration of the routing. CLI: `git checkout routing`.
    <app-navbar></app-navbar>
    <router-outlet></router-outlet>
    ```
+
+## Add Customer Components
+To add components to the previously created module `Customers[customers.module.ts]` do the following:
+```shell
+ng g c customers/customer -m customers
+ng g c customers/customer-add -m customers
+ng g c customers/customer-edit -m customers
+ng g c customers/customer-list -m customers
+```
