@@ -13,7 +13,8 @@ Add the libraries `json-server` and `concurrently` via `npm`
 npm install json-server
 npm install concurrently
 ```
-Add the script named: `concurrently` to `package.json` of your project
+Add the script named: `concurrently` to `package.json` of your project. It runs both the `json-server` and the `application`. 
+Without `concurrently` one has to start the application and the json-server separately.
 ```yaml
 {
   "name": "ngrx-app-angular-developer",
@@ -34,7 +35,6 @@ Add the script named: `concurrently` to `package.json` of your project
 ![](doc/static/RunAngularConcurrently.png)
 
 ### Install Redux Devtools
-
 Link: [DevTools Explained](https://youtu.be/SkoI_VHtcTU?t=281)
 ```typescript
     StoreDevtoolsModule.instrument({
@@ -45,3 +45,71 @@ Link: [DevTools Explained](https://youtu.be/SkoI_VHtcTU?t=281)
       traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
     }),
 ```
+
+## Routing Step-by-step
+
+1. Create a module AppRouting via `ng g m appRouting --flat` (creates the file: `app-routing.module.ts`)
+2. Import and add AppRouting to `app.module.ts` `import {AppRoutingModule} from "./app-routing.module";`
+    ```typescript
+        import {AppRoutingModule} from "./app-routing.module";
+        ...
+        @NgModule({
+            declarations: [
+                AppComponent,                
+                NavbarComponent,
+                HomeComponent
+             ],
+            imports: [
+                BrowserModule,
+                AppRoutingModule,
+    ```
+3. Define `appRoutes` in `app-routing.module.ts` and lazy load of customer module
+   ```typescript
+        import {RouterModule, Routes} from "@angular/router";
+        ...
+        const appRoutes: Routes = [
+           { path: "", component: HomeComponent },
+           { path: "customers", loadChildren: () => import("../app/customers/customers.module").then(m => m.CustomersModule) }
+        ];
+  
+        @NgModule({
+          declarations: [],
+          imports: [
+            CommonModule,
+            RouterModule.forRoot(appRoutes)
+          ],
+          exports: [RouterModule]
+        })
+        export class AppRoutingModule {}
+   ```
+4. Create module `customers` via `ng generate module customers/customers`
+5. Define `customerRoutes` in `customers.module.ts`
+   ```typescript
+        import {RouterModule, Routes} from "@angular/router";
+        ...
+        const customerRoutes: Routes = [
+          {
+            path: "",
+            component: CustomerComponent}
+        ]
+  
+        @NgModule({
+          declarations: [
+            CustomerComponent,
+            CustomerAddComponent,
+            CustomerEditComponent,
+            CustomerListComponent
+          ],
+          imports: [
+            CommonModule,
+            RouterModule.forChild(customerRoutes),
+            ReactiveFormsModule
+          ]
+        })
+        export class CustomersModule { }
+   ```
+6. Add the `router-outlet` in `app-component.html`
+   ```html
+   <app-navbar></app-navbar>
+   <router-outlet></router-outlet>
+   ```
