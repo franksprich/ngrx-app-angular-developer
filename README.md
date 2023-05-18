@@ -33,8 +33,10 @@ ng version
 ## Precondition
 ```shell
 Angular CLI: 16.0.1
-Node: 16.14.0
-Package Manager: npm 9.6.6
+Node: 20.1.0 (Unsupported)
+Package Manager: npm 9.6.4
+OS: linux x64
+
 ```
 
 
