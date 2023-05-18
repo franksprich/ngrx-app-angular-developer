@@ -1,32 +1,26 @@
 <div class="mt-4">
   <h3>Edit Customer</h3>
-  <form [formGroup]="customerForm" (submit)="updateCustomer()" class="form-inline mb-4">
-
-    <label class="sr-only" for="Name">Name</label>
-    <div class="input-group mb-2 mr-sm-2">
-      <input type="text" id="Name" class="form-control" formControlName="name" placeholder="name">
+  <form class="d-flex flex-column flex-sm-row mb-4" [formGroup]="customerForm" (submit)="updateCustomer()">
+<!--    <label class="sr-only" for="Name">Name</label>-->
+    <div class="input-group mb-2 mb-sm-0 me-sm-2">
+      <input type="text" id="Name" class="form-control" formControlName="name" placeholder="Name">
     </div>
-
-    <label class="sr-only" for="Phone">Phone</label>
-    <div class="input-group mb-2 mr-sm-2">
+<!--    <label class="sr-only" for="Phone">Phone</label>-->
+    <div class="input-group mb-2 mb-sm-0 me-sm-2">
       <input type="text" id="Phone" class="form-control" formControlName="phone" placeholder="Phone">
     </div>
-
-    <label class="sr-only" for="Address">Address</label>
-    <div class="input-group mb-2 mr-sm-2">
+<!--    <label class="sr-only" for="Address">Address</label>-->
+    <div class="input-group mb-2 mb-sm-0 me-sm-2">
       <input type="text" id="Address" class="form-control" formControlName="address" placeholder="Address">
     </div>
-
-    <label class="sr-only" for="membership">Membership</label>
-    <div class="input-group mb-2 mr-sm-2">
-      <select formControlName="membership" id="membership" class="form-control">
+<!--    <label class="sr-only" for="membership">Membership</label>-->
+    <div class="input-group mb-2 mb-sm-0 me-sm-2">
+      <select formControlName="membership" id="membership" class="form-select form-control">
         <option>Basic</option>
         <option>Pro</option>
         <option>Platinum</option>
       </select>
     </div>
-
     <button type="submit" class="btn btn-primary mb-2">Update Customer</button>
-
   </form>
 </div>
