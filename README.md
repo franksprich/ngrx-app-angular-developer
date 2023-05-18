@@ -1,10 +1,55 @@
 # NGRX from AngularDeveloper.io
+## Manage Environment with NVM
+Use `nvm` for quick changes of `node` versions
+### Installation
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+nvm version
+```
+### NODE: List, Install, Default
+```shell
+nvm ls-remote
+nvm install v20.1.0
+nvm alias default v20.1.0
+node -v
+npm version
+```
+
+### Angular CLI Update or Uninstall/Install
+Link: [ng update](https://docs.angular.lat/cli/update)
+```shell
+ng update @angular/cli @angular/core
+## ng update @angular/cli@^<major_version> @angular/core@^<major_version>
+ng version
+```
+or
+```shell
+npm uninstall -g @angular/cli
+npm cache verify
+npm install -g @angular/cli@latest
+ng version
+```
+
+## Precondition
+```shell
+Angular CLI: 16.0.1
+Node: 16.14.0
+Package Manager: npm 9.6.6
+```
+
 
 ## Install Packages
 ```shell
 npm install @ngrx/store
-npm install bootstrap@5.3.0-alpha3
+npm install @ngrx/effects
+npm install @ngrx/entity
 npm install @ngrx/store-devtools
+npm install @ngrx/router-store
+npm install bootstrap@5.3.0-alpha3
+```
+or short
+```shell
+npm install @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools @ngrx/router-store bootstrap@5.3.0-alpha3
 ```
 
 ## Run the Application
