@@ -47,7 +47,8 @@ Link: [DevTools Explained](https://youtu.be/SkoI_VHtcTU?t=281)
 ```
 
 ## Routing Step-by-step
-
+The Git branch `routing` depicts an early state of the application which concentrates
+on the integration of the routing. CLI: `git checkout routing`.
 1. Create a module AppRouting via `ng g m appRouting --flat` (creates the file: `app-routing.module.ts`)
 2. Import and add AppRouting to `app.module.ts` `import {AppRoutingModule} from "./app-routing.module";`
     ```typescript
