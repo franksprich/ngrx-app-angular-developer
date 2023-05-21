@@ -1,3 +1,17 @@
+<!-- TOC -->
+* [NGRX from AngularDeveloper.io](#ngrx-from-angulardeveloperio)
+  * [Manage Environment with NVM](#manage-environment-with-nvm)
+    * [Installation](#installation)
+    * [node: List, Install, Default](#node-list-install-default)
+    * [Angular CLI Update or Uninstall/Install](#angular-cli-update-or-uninstallinstall)
+  * [Precondition](#precondition)
+  * [Install Packages](#install-packages)
+  * [Run the Application](#run-the-application)
+    * [Install Redux Devtools](#install-redux-devtools)
+  * [Routing Step-by-step](#routing-step-by-step)
+  * [Add Customer Components](#add-customer-components)
+<!-- TOC -->
+
 # NGRX from AngularDeveloper.io
 ## Manage Environment with NVM
 Use `nvm` for quick changes of `node` versions
