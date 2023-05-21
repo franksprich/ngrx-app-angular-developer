@@ -1,12 +1,14 @@
 # NGRX from AngularDeveloper.io
 ## Manage Environment with NVM
 Use `nvm` for quick changes of `node` versions
+
 ### Installation
 ```shell
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 nvm version
 ```
-### NODE: List, Install, Default
+
+### node: List, Install, Default
 ```shell
 nvm ls-remote
 nvm install v20.1.0
@@ -38,7 +40,6 @@ Package Manager: npm 9.6.4
 OS: linux x64
 
 ```
-
 
 ## Install Packages
 ```shell
